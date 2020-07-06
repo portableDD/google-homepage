@@ -1,1 +1,2 @@
 # google-homepage
+tis current project is about destroying and rebuilding a web page, i belive while am done with this project i will be able to use html and css well and and i will have had a pratical expeience and i would ahave kno whow to operate well with html and css and developer tool
