@@ -1,0 +1,86 @@
+body {
+    background-color: white
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    float: right;
+    text-align: center;
+}
+a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: black !important ;
+}
+.blue-button {
+   background-color: blue;
+   color: white;
+   margin-top: 4px;
+   height: 28px;
+   border: 0px;
+   border-radius: 2px;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.first {
+    position: fixed;
+    top: 30%;
+    left: 30%;
+    display: block;
+    text-align: center;
+}
+
+.first input {
+    display: block;
+    width: 600px;
+    height: 40px;
+    margin-top: 30px;
+    border: 1px solid #dfe1e5;
+    border-radius: 50px;
+}
+.first p a {
+    display: inline-block !important;
+    color: blue !important;
+}
+.left {
+    float: left; 
+    padding-left: 17px;   
+}
+.left a {
+       color: gray !important;
+}
+.onmyown {
+    color: gray !important;
+    padding-left: 22px;
+    height: 40px;
+    background-color: #f2f2f2;
+    border: 1px solid #e4e4e4;
+    vertical-align: middle;
+}
+.leftright {
+    display: inline-block;
+    width: 100%;
+    background-color: #f2f2f2;
+    height: 40px;
+
+}
+.right {
+    float: right;
+    margin-right: 30px;
+}
+.right a {
+    color: gray !important;
+}
+.ade button {
+    margin: 11px 4px 4px 11px;
+    padding: 10px 5px 10px 5px;
+    border: 0px;
+    border-radius: 2px;
+}
