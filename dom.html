@@ -1,0 +1,101 @@
+<html>
+    <head>
+      <title>DOM manipulation</title>
+    </head>
+    <body>
+        <h1>
+          THE TITLE OF YOUR WEBPAGE
+        </h1>
+        <div id="container">
+            <button id="1">Click Me</button>
+            <button id="2">Click Me</button>
+            <button id="3">Click Me</button>
+        </div>
+        <button onclick="alert('Hello World')">Click Me</button>
+        <button id="btn">Click Me</button>
+        <button id="btn">Click Me Too</button>
+        <button onclick="alertFunction()">CLICK ME BABY</button>
+
+        <p id="p2">Hello World!</p>
+
+        <h1 id="id1">My Heading 1</h1>
+
+        <button type="button"
+            onclick="document.getElementById('id1').style.color = 'red'">
+            Click Me!
+        </button>
+
+      </body>
+      <script>
+         
+         const container = document.querySelector('#container');
+
+         const content = document.createElement('div');
+         content.classList.add('content');
+         content.textContent = 'This is the glorious text-content!';
+
+         container.appendChild(content);
+
+         const create = document.createElement('p');
+         create.style.color = 'red';
+         create.textContent = "Hey i'm red!";
+
+         container.appendChild(create);
+
+         const fill = document.createElement('h3');
+         fill.style.color = 'blue';
+         fill.textContent = "i'm a blue h3!";
+
+         container.appendChild(fill);
+
+         const ade = document.createElement('div');
+         ade.setAttribute('id', 'theDiv');
+         ade.style.cssText = "background-color: white; border: thick solid #000000";
+
+
+         const high = document.createElement('h1');
+         high.textContent = "i'm in a div";
+
+         ade.appendChild(high);
+
+         const joy = document.createElement('p');
+         joy.textContent = "ME TOO!";
+
+         ade.appendChild(joy);
+
+         container.appendChild(ade);
+
+         const btn = document.querySelector('#btn');
+         btn.onclick = () => alert("Hello World");
+
+         const hi = document.querySelector('#btn');
+         hi.addEventListener('click', () => {
+         alert("Hello World");
+         });
+
+
+         function alertFunction() {
+         alert("YAY! YOU DID IT!");
+         }
+
+         btn.onclick = alertFunction;
+
+         btn.addEventListener('click', alertFunction);
+
+         btn.addEventListener('click', function (e) {
+            e.target.style.background = 'blue';
+         });
+
+         const buttons = document.querySelectorAll('button');
+            buttons.forEach((button) => {
+                 button.addEventListener('click', () => {
+                    alert(button.id);
+                 });
+            });
+
+         document.write(Date());
+
+         document.getElementById("p2").style.color = "blue";
+
+    </script>
+</html>

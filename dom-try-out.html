@@ -1,0 +1,222 @@
+<html>
+    <head>
+        <title>trying out new thing in dom</title>
+        <style>
+            #container {
+              width: 400px;
+              height: 400px;
+              position: relative;
+              background: yellow;
+            }
+            #animate {
+              width: 50px;
+              height: 50px;
+              position: absolute;
+              background: red;
+            }
+            #myDiv1, #myDiv2 {
+            background-color: coral;
+            padding: 50px;
+            }
+
+            #myP1, #myP2 {
+            background-color: white; 
+            font-size: 20px;
+            border: 1px solid;
+            padding: 20px;
+            }
+
+            #myDIV {
+             background-color: coral;
+             border: 1px solid;
+             padding: 50px;
+             color: white;
+             font-size: 20px;
+            }
+            </style>
+    </head>
+    <body onload="checkCookies()">
+
+        <h2>My First JavaScript Animation</h2>
+
+        <p><button onclick="myMove()">Click Me</button></p> 
+
+        <div id ="container">
+            <div id ="animate"></div>
+        </div>
+
+        <h1 onclick="changeText(this)">Click on this text!</h1>
+
+        <button onclick="displayDate()">Try it</button>
+
+        <button id="myBtn">Try it</button>
+
+        <p id="demo"></p>
+
+        Enter your name: <input type="text" id="fname" onchange="myfunction()">
+
+        
+        <div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color:#D94A38;width:120px;height:20px;padding:40px;">
+            Mouse Over Me
+        </div>
+
+        <div onmousedown="mDown(this)" onmouseup="mUp(this)"style="background-color:#D94A38;width:90px;height:20px;padding:40px;">
+        Click Me
+        </div>
+
+        <p id="sky"></p>
+
+        Enter your name: <input type="text" onfocus="myFunction(this)">
+
+        <h1 onmouseover="style.color='red'"
+            onmouseout="style.color='black'">
+            Mouse over this text
+        </h1>
+        
+        <div id="myDiv1">
+            <h2>Bubbling:</h2>
+            <p id="myP1">Click me!</p>
+        </div><br>
+          
+        <div id="myDiv2">
+            <h2>Capturing:</h2>
+            <p id="myP2">Click me!</p>
+        </div>
+
+        <div id="myDIV">
+            <p>This div element has an onmousemove event handler that displays a random number every time you move your mouse inside this orange field.</p>
+            <p>Click the button to remove the div's event handler.</p>
+            <button onclick="removeHandler()" id="myBtun">Remove</button>
+        </div>
+        <p id="afric"></p>
+    </body>
+
+    <script>
+
+        function myfunction() {
+            var x = document.getElementById("fname");
+            x.value = x.value.toUpperCase();
+        }
+
+        //function mymessage() {
+            //alert("This message was triggered from the onload event");
+        //}
+
+        function checkCookies() {
+            var text = "";
+            if (navigator.cookieEnabled == true) {
+                text = "Cookies are enabled.";
+            } else {
+                text = "Cookies are not enabled.";
+            }
+            document.getElementById("demo").innerHTML = text;
+        }
+
+        function myMove() {
+            let elem = document.getElementById("animate");
+            let pos = 0;
+            let id = setInterval(frame, 5);
+            function frame() {
+              if (pos == 350) {
+                clearInterval(id);
+              } else {
+                pos++;
+                elem.style.top = pos + 'px';
+                elem.style.left = pos + 'px';
+              }
+            }
+        }
+
+        function changeText(id) {
+            id.innerHTML = "Ooops!";
+        }
+
+        let x = document.getElementById("myBtn");
+        x.addEventListener("mouseover", myifunction);
+        x.addEventListener("click", mySecondFunction);
+        x.addEventListener("mouseout", myThirdFunction);
+
+        function myifunction() {
+            document.getElementById("demo").innerHTML += "Moused over!<br>";
+        }
+
+        function mySecondFunction() {
+            document.getElementById("demo").innerHTML += "Clicked!<br>";
+        }
+
+        function myThirdFunction() {
+            document.getElementById("demo").innerHTML += "Moused out!<br>";
+        }
+
+        let p1 = 5;
+        let p2 = 7;
+
+        document.getElementById("myBtn").addEventListener("click", function() {
+            myunction(p1, p2);
+        });
+
+        function myunction(a, b) {
+            let result = a * b;
+            document.getElementById("demo").innerHTML = result;
+        }
+
+        window.addEventListener("resize", function(){
+            document.getElementById("myBtn").innerHTML = Math.random(4);
+        });
+
+        
+        function displayDate() {
+         document.getElementById("demo").innerHTML = Date();
+        }
+        
+        function mOver(obj) {
+            obj.innerHTML = "Thank You"
+        }
+
+        function mOut(obj) {
+            obj.innerHTML = "Mouse Over Me"
+        }
+
+        function mDown(obj) {
+            obj.style.backgroundColor = "#1ec5e5";
+            obj.innerHTML = "Release Me";
+        }
+
+        function mUp(obj) {
+            obj.style.backgroundColor="#D94A38";
+            obj.innerHTML="Thank You";
+        }
+
+        function myFunction(x) {
+            x.style.background = "yellow";
+        }
+
+        document.getElementById("myP1").addEventListener("click", function() {
+            alert("You clicked the white element!");
+        }, false);
+
+        document.getElementById("myDiv1").addEventListener("click", function() {
+            alert("You clicked the orange element!");
+        }, false);
+
+        document.getElementById("myP2").addEventListener("click", function() {
+            alert("You clicked the white element!");
+        }, true);
+
+        document.getElementById("myDiv2").addEventListener("click", function() {
+            alert("You clicked the orange element!");
+        }, true);
+
+        document.getElementById("myDIV").addEventListener("mousemove", mynction);
+
+        function mynction() {
+            document.getElementById("afric").innerHTML = Math.random();
+        }
+
+        function removeHandler() {
+            document.getElementById("myDIV").removeEventListener("mousemove", mynction);
+        }
+
+
+    </script>      
+</html>
