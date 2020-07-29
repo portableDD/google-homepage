@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title> learning.html</title>
+        <title > learning.html</title>
       </head>
    
       <body>
@@ -11,5 +11,107 @@
          </select>
          
          <h1>This is my website</h1>
+         <h1 class="id01">My First Page</h1>
+         <p class="id02">Hello</p>
+
+         <p>Hello World!</p>
+          <div>
+            <p>The DOM is very useful!</p>
+            <p>This example demonstrates the <b>document.body</b> property.</p>
+          </div>
+
+          <div id="div1">
+            <p id="p1">This is a paragraph.</p>
+            <p id="p2">This is another paragraph.</p>
+            <p id="demo"></p>
+            <p>Click the button to change the color of all p elements.</p>
+
+            <button onclick="myFunction()">Try it</button>
+
+            <button onclick="myfunction()">Try it</button>
+
+          </div>
+
+          <h1 id="elm"> how </h1>
+          <DIV></DIV>
+
+          <!--div id="div1">
+            <p id="p1">This is a paragraph.</p>
+            <p id="p2">This is another paragraph.</p>
+          </div-->
+
       </body>
+      <script>
+        
+        //document.getElementByClass("id02").innerHTML = document.getElementsByClass("id01").nodeType;
+     
+        let para = document.createElement("p");
+        //para.textContent= "This is new.";
+        let node = document.createTextNode("This is new.");
+        para.appendChild(node);
+        
+
+        let parent = document.getElementById("div1");
+        let child = document.getElementById("p1");
+        parent.replaceChild(para, child);
+
+        let myCollection = document.getElementsByTagName("p");
+        document.getElementById("demo").innerHTML = "The innerHTML of the second paragraph is: " + 
+        myCollection[1].innerHTML;
+
+        let myCOllection = document.getElementsByTagName("p");
+        document.getElementById("demo").innerHTML = 
+        "This document contains " + myCollection.length + " paragraphs.";
+
+        let myNodelist = document.querySelectorAll("p");
+        document.getElementById("demo").innerHTML ="The innerHTML of the second paragraph is: " +
+        myNodelist[1].innerHTML;
+
+        let mynodelist = document.querySelectorAll("p");
+        document.getElementById("demo").innerHTML =
+        "This document contains " + mynodelist.length + " paragraphs.";
+
+        function myfunction() {
+          let myNOdelist = document.querySelectorAll("p");
+          let i;
+          for (i = 0; i < myNOdelist.length; i++) {
+           myNOdelist[i].style.color = "blue";
+          }
+        }
+        function myFunction() {
+          let mycollection = document.getElementsByTagName("p");
+          let i;
+          for (i = 0; i < mycollection.length; i++) {
+             mycollection[i].style.color = "red";
+          }
+        }
+
+        let elm = document.getElementById('elm');
+
+        elm.insertAdjacentHTML('afterbegin', '<span> dude </span>');
+        elm.insertAdjacentHTML('afterbegin', '<span> Hey </span>'); 
+        elm.insertAdjacentHTML('beforeend', '<span> are </span>'); 
+        elm.insertAdjacentHTML('beforeend', '<span> you? </span>');
+
+        var divStyle = document.querySelector('DIV').style;
+        divStyle.backgroundColor = 'red';
+        divStyle.border = '1px solid black';
+        divStyle.width = '300px';
+        divStyle.height = '200px';
+  
+        
+        //let x = document.getElementsByTagName("p");
+
+        //y=x[1];
+        
+        //element.insertBefore(para, child);
+
+        //let elmnt = document.getElementById("p1");
+        //elmnt.remove();
+        //element.appendChild(para);
+
+        //alert(document.documentElement.innerHTML);
+
+        //alert(document.body.innerHTML);
+      </script>
 </html>
